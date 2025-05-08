@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+ccn-env/
+
+# Training data
+data/train/
+*.pth
+
+# Images
+*.png
+
+# VS Code / IDE
+.vscode/
+.idea/

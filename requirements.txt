@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+pillow
+matplotlib
+seaborn
+scikit-learn
+python-chess
+cairosvg
+opencv-python
+tqdm
+pyautogui
+stockfish
