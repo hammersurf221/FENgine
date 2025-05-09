@@ -11,8 +11,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-# 📁 Make sure the folder exists
-os.makedirs("Confusion_Matrixes", exist_ok=True)
+
+model_name = input("Enter a name for this model: ").strip()
+model_path = f"ccn_model_{model_name}.pth"
+matrix_dir = os.path.join("confusion_matrices", f"confusion_matrix_{model_name}")
+os.makedirs(matrix_dir, exist_ok=True)
+
 
 def plot_confusion_matrix(y_true, y_pred, class_names, filename):
     cm = confusion_matrix(y_true, y_pred)
@@ -91,14 +95,17 @@ for epoch in range(EPOCHS):
     # Save best model
     if val_loss < best_val_loss:
         best_val_loss = val_loss
-        torch.save(model.state_dict(), "ccn_model.pth")
-        print("✅ Saved best model")
+        torch.save(model.state_dict(), model_path)
+        print(f"✅ Saved best model as {model_path}")
+
 
     # Save confusion matrix
     epoch_str = f"{epoch+1:02d}"
+    filename = os.path.join(matrix_dir, f"confusion_matrix_E{epoch_str}.png")
     plot_confusion_matrix(
         all_labels,
         all_preds,
         class_names=[".", "P", "N", "B", "R", "Q", "K", "p", "n", "b", "r", "q", "k"],
-        filename=f"Confusion_Matrixes/confusion_matrix_E{epoch_str}.png"
+        filename=filename
     )
+
