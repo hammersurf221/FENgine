@@ -1,3 +1,7 @@
+# THIS IS A WORK IN PROGRESS. THE README AND UPLOADED FOLDER ARE NOT FINAL.
+
+---
+
 # ♟️ FENgine – Chess Position Recognition from Images (FEN Predictor)
 
 **FENgine** is an AI-powered tool that can recognize a chess board from an image and generate a valid FEN (Forsyth–Edwards Notation) string. It's built using a Convolutional Chess Network (CCN) trained on real chess screenshots and is ready for developers, chess enthusiasts, or tool builders who want to integrate computer vision into their chess projects.
